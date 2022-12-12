@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -15,6 +16,13 @@ class CalculatorTest {
     public void checkDivision() {
         double result = Calculator.divide(8,10);
         assertEquals(0.8, result);
+    }
+
+    @Test
+    public void checkDivisionError() {
+        ArithmeticException thrown = assertThrows(ArithmeticException.class, () -> {
+            Calculator.divide(8,0);
+        });
     }
 
     @Test

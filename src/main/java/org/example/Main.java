@@ -13,6 +13,10 @@ class Calculator {
     }
 
     public static double divide(double number1, double number2) {
+        int number3 = (int)Math.round(number2);
+        if (number3 == 0) {
+            throw new ArithmeticException("cannot divide by zero");
+        }
         double result = number1 / number2;
         return result;
     }
